@@ -25,9 +25,9 @@ class ListEmployeeComponent extends Component {
                     <table className='table table-hover table-stripped table-bordered'>
                         <thead>
                             <tr>
-                                <th>Employee First Name</th>
-                                <th>Employee Last Name</th>
-                                <th>Employee Email ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email ID</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -37,41 +37,16 @@ class ListEmployeeComponent extends Component {
                                 this.state.employees.map(
                                     employee =>
                                         <tr key={employee.id}>
-                                            <td> {employee.first_name} </td>
-                                            <td> {employee.last_name} </td>
-                                            <td> {employee.email_id} </td>
+                                            <td> {employee.firstName} </td>
+                                            <td> {employee.lastName} </td>
+                                            <td> {employee.emailId} </td>
+                                            <td>
+                                                <a href="http://" className='btn btn-sm btn-success'>Register</a>
+                                                <a href="http://" className='btn btn-sm btn-danger oza'>Delete</a>
+                                            </td>
                                         </tr>
                                 )
                             }
-                            <tr>
-                                <td>Jaston Ruggy</td>
-                                <td>Jaston Ruggy</td>
-                                <td>Jaston Ruggy</td>
-                                <td>
-                                    <a href="http://" className='btn btn-sm btn-success'>Register</a>
-                                    <a href="http://" className='btn btn-sm btn-danger oza'>Delete</a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Jaston Ruggy</td>
-                                <td>Jaston Ruggy</td>
-                                <td>Jaston Ruggy</td>
-                                <td>
-                                    <a href="http://" className='btn btn-sm btn-success'>Register</a>
-                                    <a href="http://" className='btn btn-sm btn-danger oza'>Delete</a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Jaston Ruggy</td>
-                                <td>Jaston Ruggy</td>
-                                <td>Jaston Ruggy</td>
-                                <td>
-                                    <a href="http://" className='btn btn-sm btn-success'>Register</a>
-                                    <a href="http://" className='btn btn-sm btn-danger oza'>Delete</a>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>

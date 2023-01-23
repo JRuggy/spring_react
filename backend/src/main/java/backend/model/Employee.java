@@ -17,14 +17,14 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "first_name") //This is database name
+    private String firstName; //This is application name
 
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "last_name") //This is database name
+    private String lastName; //This is application name
 
-    @Column(name = "email_id")
-    private String emailId;
+    @Column(name = "email_id") //This is database name
+    private String emailId; //This is application name
 
     public Employee(){
 
