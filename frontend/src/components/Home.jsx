@@ -1,11 +1,11 @@
-function Mama() {
+function Home() {
   return (
     <div>
       <div className="container">
-        <h1>This is the Mama page</h1>
+        <h1>This is the home page</h1>
       </div>
     </div>
   );
 }
 
-export default Mama;
+export default Home;

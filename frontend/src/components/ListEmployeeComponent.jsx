@@ -12,14 +12,14 @@ class ListEmployeeComponent extends Component {
 
     }
 
-    componentDidMount(){
-        EmployeeService.getEmployees().then((res)=>{
+    componentDidMount() {
+        EmployeeService.getEmployees().then((res) => {
             this.setState({ employees: res.data });
         });
     }
     render() {
         return (
-            <div>
+            <div className='container'>
                 <h2 className='text-center'>Employees List</h2>
                 <div className='row'>
                     <table className='table table-hover table-stripped table-bordered'>
@@ -47,21 +47,30 @@ class ListEmployeeComponent extends Component {
                                 <td>Jaston Ruggy</td>
                                 <td>Jaston Ruggy</td>
                                 <td>Jaston Ruggy</td>
-                                <td>Jaston Ruggy</td>
+                                <td>
+                                    <a href="http://" className='btn btn-sm btn-success'>Register</a>
+                                    <a href="http://" className='btn btn-sm btn-danger oza'>Delete</a>
+                                </td>
                             </tr>
 
                             <tr>
                                 <td>Jaston Ruggy</td>
                                 <td>Jaston Ruggy</td>
                                 <td>Jaston Ruggy</td>
-                                <td>Jaston Ruggy</td>
+                                <td>
+                                    <a href="http://" className='btn btn-sm btn-success'>Register</a>
+                                    <a href="http://" className='btn btn-sm btn-danger oza'>Delete</a>
+                                </td>
                             </tr>
 
                             <tr>
                                 <td>Jaston Ruggy</td>
                                 <td>Jaston Ruggy</td>
                                 <td>Jaston Ruggy</td>
-                                <td>Jaston Ruggy</td>
+                                <td>
+                                    <a href="http://" className='btn btn-sm btn-success'>Register</a>
+                                    <a href="http://" className='btn btn-sm btn-danger oza'>Delete</a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
