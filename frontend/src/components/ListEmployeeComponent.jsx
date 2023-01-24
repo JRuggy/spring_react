@@ -10,6 +10,8 @@ class ListEmployeeComponent extends Component {
             employees: []
         }
 
+        this.addEmployee = this.addEmployee.bind(this);
+
     }
 
     componentDidMount() {
@@ -17,6 +19,11 @@ class ListEmployeeComponent extends Component {
             this.setState({ employees: res.data });
         });
     }
+
+    addEmployee() {
+        this.props.history.push('/ListEmployeeComponent');
+    }
+
     render() {
         return (
             <div className='container'>

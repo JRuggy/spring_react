@@ -9,6 +9,9 @@ function HeaderComponent() {
                         <Link to="" className="dodo active">Home Page</Link> <br />
                     </li>
                     <li>
+                        <Link to="/AddEmployee" className="btn btn-success btn-sm">Add Employee</Link>
+                    </li>
+                    <li>
                         <Link to="/kaka" className="dada">Kaka Page</Link>
                     </li>
                     <li>
