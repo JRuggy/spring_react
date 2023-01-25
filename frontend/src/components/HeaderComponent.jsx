@@ -8,6 +8,9 @@ function HeaderComponent() {
                     <li>
                         <Link to="" className="dodo active">Home Page</Link> <br />
                     </li>
+                    {/* <li>
+                        <Link to="/ruggy" className="btn btn-success btn-sm">Ruggy</Link>
+                    </li> */}
                     <li>
                         <Link to="/AddEmployee" className="btn btn-success btn-sm">Add Employee</Link>
                     </li>

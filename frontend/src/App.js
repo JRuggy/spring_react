@@ -3,11 +3,13 @@ import { Routes, Route } from "react-router-dom";
 import Mama from './components/Mama';
 import Kaka from './components/Kaka';
 import HeaderComponent from './components/HeaderComponent';
-import FooterComponent from './components/FooterComponent';
+// import FooterComponent from './components/FooterComponent';
 import ListEmployeeComponent from './components/ListEmployeeComponent';
 import Home from './components/Home';
 import AddEmployee from './components/AddEmployee';
 import UpdateEmployeeComponent from './components/UpdateEmployeeComponent';
+// import UpdateEmployeeComponent from './components/RuggyComponent';
+// import RuggyComponent from './components/RuggyComponent';
 
 function App() {
   return (
@@ -20,8 +22,9 @@ function App() {
         <Route path="mama" element={<Mama />} />
         <Route path="AddEmployee/" element={<AddEmployee />} />
         <Route path="update-employee/:id" element={<UpdateEmployeeComponent />} />
+        {/* <Route path="ruggy" element={<RuggyComponent />} /> */}
       </Routes>
-      <FooterComponent />
+      {/* <FooterComponent /> */}
     </div>
   )
 }

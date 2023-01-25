@@ -3,6 +3,7 @@ import React from 'react';
 
 import EmployeeService from '../services/EmployeeService';
 // import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 class AddEmployee extends React.Component {
     constructor(props) {
@@ -21,18 +22,24 @@ class AddEmployee extends React.Component {
         this.saveEmployee = this.saveEmployee.bind(this);
     }
 
-    saveEmployee = (e) => {
+    saveEmployee (e) {
         // const navigate = useNavigate();
+        // navigate('/AddEmployee');
         e.preventDefault();
+
+        // The line below is for outing alert
+        // alert('Employee Added Successfully!');
+
         let employee = { firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId };
 
         // The line below is for testing if data are coming or not
         // console.log('employee => ' + JSON.stringify(employee));
 
         EmployeeService.createEmployee(employee).then(res => {
-            this.props.history.push('/ListEmployeeComponent');
-            // navigate('/ListEmployeeComponent');
+            this.props.history.push('/AddEmployee');
+            // navigate('/AddEmployee');
         });
+
     }
 
     changeFirstNameHandler(event) {
