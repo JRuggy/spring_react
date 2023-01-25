@@ -11,15 +11,18 @@ function HeaderComponent() {
                     <li>
                         <Link to="/AddEmployee" className="btn btn-success btn-sm">Add Employee</Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link to="/kaka" className="dada">Kaka Page</Link>
                     </li>
                     <li>
                         <Link to="/mama" className="dada">Mama Page</Link>
-                    </li>
+                    </li> */}
                     <li>
-                        <Link to="ListEmployeeComponent" className="dada">List Employee</Link>
+                        <Link to="/ListEmployeeComponent" className="dada btn btn-sm btn-success">List Employee</Link>
                     </li>
+                    {/* <li>
+                        <Link to="/UpdateEmployeeComponent" className="dada">Update</Link>
+                    </li> */}
                 </nav>
             </header>
         </div>

@@ -11,7 +11,12 @@ class ListEmployeeComponent extends Component {
         }
 
         this.addEmployee = this.addEmployee.bind(this);
+        this.editEmployee = this.editEmployee.bind(this);
 
+    }
+
+    editEmployee(id) {
+        this.props.history.push(`/UpdateEmployeeComponent/${id}`);
     }
 
     componentDidMount() {
@@ -21,13 +26,16 @@ class ListEmployeeComponent extends Component {
     }
 
     addEmployee() {
-        this.props.history.push('/ListEmployeeComponent');
+        this.props.history.push('/AddEmployee');
     }
 
     render() {
         return (
             <div className='container'>
                 <h2 className='text-center'>Employees List</h2>
+                <div className='row'>
+                    <button className='btn btn-primary' onClick={this.addEmployee}>Add Employee</button>
+                </div>
                 <div className='row'>
                     <table className='table table-hover table-stripped table-bordered'>
                         <thead>
@@ -48,7 +56,8 @@ class ListEmployeeComponent extends Component {
                                             <td> {employee.lastName} </td>
                                             <td> {employee.emailId} </td>
                                             <td>
-                                                <a href="http://" className='btn btn-sm btn-success'>Register</a>
+                                                {/* <a href="http://" className='btn btn-sm btn-info'>Update</a> */}
+                                                <button onClick={() => this.editEmployee(employee.id)} className="btn btn-sm btn-info oza">Update</button>
                                                 <a href="http://" className='btn btn-sm btn-danger oza'>Delete</a>
                                             </td>
                                         </tr>

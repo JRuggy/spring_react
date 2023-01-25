@@ -7,6 +7,7 @@ import FooterComponent from './components/FooterComponent';
 import ListEmployeeComponent from './components/ListEmployeeComponent';
 import Home from './components/Home';
 import AddEmployee from './components/AddEmployee';
+import UpdateEmployeeComponent from './components/UpdateEmployeeComponent';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="kaka" element={<Kaka />} />
         <Route path="mama" element={<Mama />} />
         <Route path="AddEmployee" element={<AddEmployee />} />
+        <Route path="UpdateEmployeeComponent/:id" element={<UpdateEmployeeComponent />} />
       </Routes>
       <FooterComponent />
     </div>
