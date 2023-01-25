@@ -18,8 +18,8 @@ function App() {
         <Route path="ListEmployeeComponent" element={<ListEmployeeComponent />} />
         <Route path="kaka" element={<Kaka />} />
         <Route path="mama" element={<Mama />} />
-        <Route path="AddEmployee" element={<AddEmployee />} />
-        <Route path="UpdateEmployeeComponent/:id" element={<UpdateEmployeeComponent />} />
+        <Route path="AddEmployee/" element={<AddEmployee />} />
+        <Route path="update-employee/:id" element={<UpdateEmployeeComponent />} />
       </Routes>
       <FooterComponent />
     </div>

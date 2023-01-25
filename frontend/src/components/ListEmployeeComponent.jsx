@@ -12,21 +12,32 @@ class ListEmployeeComponent extends Component {
 
         this.addEmployee = this.addEmployee.bind(this);
         this.editEmployee = this.editEmployee.bind(this);
+        // this.deleteEmployee = this.editEmployee.bind(this);
 
     }
 
     editEmployee(id) {
-        this.props.history.push(`/UpdateEmployeeComponent/${id}`);
+        this.context.history.push(`/update-employee/${id}`);
     }
+
+    addEmployee() {
+        this.context.history.push('/AddEmployee');
+    }
+
+    // viewEmployee() {
+    //     this.props.history.push(`/view-employee/${id}`);
+    // }
+
+    // deleteEmployee(id) {
+    //     EmployeeService.deleteEmployee(id).then(res => {
+    //         this.setState({ employees: this.state.employees.filter(employee => employee.id !== id) });
+    //     });
+    // }
 
     componentDidMount() {
         EmployeeService.getEmployees().then((res) => {
             this.setState({ employees: res.data });
         });
-    }
-
-    addEmployee() {
-        this.props.history.push('/AddEmployee');
     }
 
     render() {
@@ -56,9 +67,9 @@ class ListEmployeeComponent extends Component {
                                             <td> {employee.lastName} </td>
                                             <td> {employee.emailId} </td>
                                             <td>
-                                                {/* <a href="http://" className='btn btn-sm btn-info'>Update</a> */}
                                                 <button onClick={() => this.editEmployee(employee.id)} className="btn btn-sm btn-info oza">Update</button>
-                                                <a href="http://" className='btn btn-sm btn-danger oza'>Delete</a>
+                                                {/* <button style={{ marginLeft: "10px" }} onClick={() => this.deleteEmployee(employee.id)} className="btn btn-danger btn-sm oza">Delete </button>
+                                                <button style={{ marginLeft: "10px" }} onClick={() => this.viewEmployee(employee.id)} className="btn btn-success btn-sm oza">View </button> */}
                                             </td>
                                         </tr>
                                 )

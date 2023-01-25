@@ -38,11 +38,10 @@ export default class UpdateEmployeeComponent extends Component {
         let employee = { firstName: this.state.firstName, lastName: this.state.lastName, emailId: this.state.emailId };
 
         // The line below is for testing if data are coming or not
-        // console.log('employee => ' + JSON.stringify(employee));
+        console.log('employee => ' + JSON.stringify(employee));
 
-        EmployeeService.createEmployee(employee).then(res => {
+        EmployeeService.updateEmployee(employee).then(res => {
             this.props.history.push('/ListEmployeeComponent');
-            // navigate('/ListEmployeeComponent');
         });
     }
 
