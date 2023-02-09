@@ -3,7 +3,7 @@ import React from 'react';
 
 import EmployeeService from '../services/EmployeeService';
 // import { useNavigate } from 'react-router-dom';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 class AddEmployee extends React.Component {
     constructor(props) {
@@ -22,9 +22,8 @@ class AddEmployee extends React.Component {
         this.saveEmployee = this.saveEmployee.bind(this);
     }
 
-    saveEmployee (e) {
-        // const navigate = useNavigate();
-        // navigate('/AddEmployee');
+    saveEmployee(e) {
+
         e.preventDefault();
 
         // The line below is for outing alert
@@ -36,8 +35,10 @@ class AddEmployee extends React.Component {
         // console.log('employee => ' + JSON.stringify(employee));
 
         EmployeeService.createEmployee(employee).then(res => {
-            this.props.history.push('/AddEmployee');
-            // navigate('/AddEmployee');
+            // this.props.history.push('/AddEmployee');
+            const navigate = useNavigate();
+            // navigate('/ListEmployeeComponent');
+            navigate("/ListEmployeeComponent");
         });
 
     }

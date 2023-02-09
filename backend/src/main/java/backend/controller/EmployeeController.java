@@ -32,12 +32,6 @@ public class EmployeeController {
         return employeeRepository.findAll();
     }
 
-    // Create employee rest api
-    @PostMapping("/employees")
-    public Employee creatEmployee(@RequestBody Employee employee) {
-        return employeeRepository.save(employee);
-    }
-
     // Get Employee By ID
     @GetMapping("/employees/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
@@ -45,6 +39,13 @@ public class EmployeeController {
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id " + id));
         return ResponseEntity.ok(employee);
     }
+
+    // Create employee rest api
+        @PostMapping("/employees")
+    public Employee creatEmployee(@RequestBody Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
 
     // Update Employee
     @PutMapping("/employees/{id}")
