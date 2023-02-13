@@ -8,3 +8,7 @@ It's easier for a programmer who's familiar with java, javascript, bootstrap and
 # NICE CODING !
 
 # JASTON RUGGY
+
+<!-- For React Easy Access -->
+# press rfc for function
+# press rcc for class
