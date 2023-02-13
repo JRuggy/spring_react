@@ -11,18 +11,21 @@ export default function AddUser() {
         firstName: "",
         lastName: "",
         emailId: "",
-    })
+    });
 
     const { firstName, lastName, emailId } = user;
 
     const onInputChange = (e) => {
-        setUsers({ user, [e.target.name]: e.target.value });
+        // the 3 dots below means copy all the elements
+        setUsers({ ...user, [e.target.name]: e.target.value });
     };
 
     const onSubmit = async (e) => {
+
+        // prevents url from outputing values
         e.preventDefault();
-        await axios.post("http://localhost:8080/api/v1/employees", user)
-        console.log(user);
+
+        await axios.post("http://localhost:8080/api/v1/employees", user);
 
         // This navigates back to home
         navigate("/");

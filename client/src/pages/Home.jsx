@@ -25,7 +25,6 @@ export default function Home() {
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>User's ID</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Email ID</th>
@@ -38,7 +37,6 @@ export default function Home() {
                                         <tr>
                                             {/* The index + 1 is for increamenting numbers */}
                                             <th key={index}>{index + 1}</th>
-                                            <td>{user.id}</td>
                                             <td>{user.firstName}</td>
                                             <td>{user.lastName}</td>
                                             <td>{user.emailId}</td>
