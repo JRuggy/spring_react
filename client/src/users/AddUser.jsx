@@ -25,7 +25,7 @@ export default function AddUser() {
         console.log(user);
 
         // This navigates back to home
-        // navigate("/");
+        navigate("/");
     }
 
     return (
