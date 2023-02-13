@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function AddUser() {
 
     let navigate = useNavigate()
 
     const [user, setUsers] = useState({
-        firstname: "",
-        lastname: "",
-        email: "",
+        firstName: "",
+        lastName: "",
+        emailId: "",
     })
 
-    const { firstname, lastname, email } = user
+    const { firstName, lastName, emailId } = user;
 
     const onInputChange = (e) => {
         setUsers({ user, [e.target.name]: e.target.value });
@@ -21,7 +22,10 @@ export default function AddUser() {
     const onSubmit = async (e) => {
         e.preventDefault();
         await axios.post("http://localhost:8080/api/v1/employees", user)
-        navigate("/");
+        console.log(user);
+
+        // This navigates back to home
+        // navigate("/");
     }
 
     return (
@@ -33,19 +37,19 @@ export default function AddUser() {
                     <form onSubmit={(e) => onSubmit(e)} >
 
                         <div className='mb-3'>
-                            <label htmlFor="First" className='form-label'>First Name</label>
-                            <input onChange={(e) => onInputChange(e)} value={firstname} type={"text"} className="form-control" placeholder='Enter Your First Name' name='firstname' />
+                            <label htmlFor="First Name" className='form-label'>First Name</label>
+                            <input onChange={(e) => onInputChange(e)} value={firstName} type={"text"} className="form-control" placeholder='Enter Your First Name' name='firstName' />
                         </div>
                         <div className='mb-3'>
-                            <label htmlFor="Name" className='form-label'>Last Name</label>
-                            <input onChange={(e) => onInputChange(e)} value={lastname} type={"text"} className="form-control" placeholder='Enter Your Last Name' name='lastname' />
+                            <label htmlFor="Last Name" className='form-label'>Last Name</label>
+                            <input onChange={(e) => onInputChange(e)} value={lastName} type={"text"} className="form-control" placeholder='Enter Your Last Name' name='lastName' />
                         </div>
                         <div className='mb-3'>
-                            <label htmlFor="Name" className='form-label'>Email ID</label>
-                            <input onChange={(e) => onInputChange(e)} value={email} type={"text"} className="form-control" placeholder='Enter Your Email ID ' name='email' />
+                            <label htmlFor="Email" className='form-label'>Email ID</label>
+                            <input onChange={(e) => onInputChange(e)} value={emailId} type={"text"} className="form-control" placeholder='Enter Your Email ID ' name='emailId' />
                         </div>
                         <button type="submit" className='btn btn-sm btn-outline-primary oza'>Register</button>
-                        <button type="submit" className='btn btn-sm btn-outline-danger oza'>Cancel</button>
+                        <Link to="/" className="btn btn-sm btn-outline-danger oza">Cancel</Link>
 
                     </form>
                 </div>
