@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import backend.CustomeApiResponse.CustomApiResponse;
 import backend.exception.ResourceNotFoundException;
 import backend.model.Employee;
 import backend.repository.EmployeeRepository;
@@ -45,8 +47,8 @@ public class EmployeeController {
 
     // Create employee rest api
     @PostMapping("/employees")
-    public Employee creatEmployee(@RequestBody Employee employee) {
-        return employeeRepository.save(employee);
+    public CustomApiResponse creatEmployee(@RequestBody Employee employee) {
+        return CustomApiResponse.created("User",employeeRepository.save(employee));
     }
 
     // Update Employee
@@ -61,6 +63,7 @@ public class EmployeeController {
 
         Employee updatedEmployee = employeeRepository.save(employee);
         return ResponseEntity.ok(updatedEmployee);
+
     }
 
     // Delete Employee

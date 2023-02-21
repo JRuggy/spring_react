@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+// import Toast from 'react-bootstrap/Toast';
+
 
 export default function AddUser() {
 
@@ -25,7 +27,21 @@ export default function AddUser() {
         // prevents url from outputing values
         e.preventDefault();
 
-        await axios.post("http://localhost:8080/api/v1/employees", user);
+        const respose = await axios.post("http://localhost:8080/api/v1/employees", user);
+        console.log(respose.data.message);
+
+        // <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        //     <div class="toast-header">
+        //             <strong class="mr-auto"></strong>
+        //             <small>11 mins ago</small>
+        //             <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        //                 <span aria-hidden="true">&times;</span>
+        //             </button>
+        //     </div>
+        //     <div class="toast-body">
+        //         Hello, world! This is a toast message.
+        //     </div>
+        // </div>
 
         // This navigates back to home
         navigate("/");
